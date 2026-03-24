@@ -391,6 +391,831 @@
   }
   .cafe-photos img {
     width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+  @media (max-width: 520px) {
+    .cafe-photos { grid-template-columns: 1fr; }
+  }
+
+  html {
+  scroll-padding-top: 60px; /* Höhe deiner Navbar – ggf. anpassen */
+  }
+  </style>
+</head>
+<body>
+
+ <!-- BUNTING -->
+  <div class="bunting">
+    <canvas id="bunting-canvas"></canvas>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo"><span>D</span>rachen<span>N</span>est</a>
+      <ul class="nav-links">
+        <li><a href="#angebote">Angebote</a></li>
+        <li><a href="#cafe">Begegnungsraum</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-badge">🏡 Wir sind umgezogen – jetzt mit Garten!</div>
+  <h1><span class="D">D</span>RACHEN<span class="N">N</span>EST</h1>
+  <p class="hero-tagline">Wo kleine Drachen Abenteuer erleben und große Drachen Schätze finden!</p>
+  <p class="hero-sub">Zum Verweilen bei jedem Wetter – mit Kaffee und Basteln, Spielen, Lesen, Flohmarkt/Secondhand und vieles mehr. Auch zum Mieten gedacht z.B. für eure Geburtstage, als Verein, Bastelevents, Vorträge, Tanzen … etc.</p>
+  <a href="#angebote" class="hero-cta">Entdecke das DrachenNest ✨</a>
+
+  <div class="chips" style="justify-content:center; margin-top:28px;">
+    <span class="chip chip-cafe">☕ Begegnungsraum</span>
+    <span class="chip chip-second">👗 Secondhand</span>
+    <span class="chip chip-event">🎉 Eventlocation</span>
+    <span class="chip chip-kurs">🎨 Platz für Kurse</span>
+    <span class="chip chip-gebu">🎂 Kindergeburtstage</span>
+  </div>
+</section>
+
+<!-- ÖFFNUNGSZEITEN -->
+<div class="hours-banner">
+  <h2>🕒 Öffnungszeiten</h2>
+  <p>Dienstag &amp; Donnerstag &nbsp;·&nbsp; 15:00 – 18:00 Uhr</p>
+  <p style="font-size:.9rem; margin-top:6px; opacity:.85;">Münchner Straße 3, 82256 Fürstenfeldbruck</p>
+</div>
+
+<!-- ANGEBOTE -->
+<section id="angebote">
+  <div class="section-inner">
+    <h2 class="section-title">Was wir anbieten</h2>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-icon">☕</div>
+        <h3>Begegnungsraum</h3>
+        <p>Kommt zu uns mit Kind und Kegel – nehmt euch eine kleine Auszeit während die Kinder spielen. Tauscht euch aus und lernt neue Familien kennen. Am Dienstag und Donnerstag bieten wir auch Basteln, Lesestunden und vieles mehr an!</p>
+        <a href="#cafe" class="card-btn">Mehr erfahren →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-icon">👗</div>
+        <h3>Flohmarkt / Secondhand</h3>
+        <p>Wir bieten sortierte Secondhand Ware aus allen Kategorien auf Spendenbasis an. Außerdem kann im kleinen Rahmen auch auf Kommission verkauft werden. Kommt zum Stöbern und lasst euch überraschen!</p>
+        <p style="margin-top:10px; font-size:.9rem; color:#777;">Braucht ihr Hilfe beim Ausmisten? Ich biete auch persönliches Ordnungs-Coaching an.</p>
+        <a href="#kontakt" class="card-btn">Kontakt aufnehmen →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-icon">💡</div>
+        <h3>Raum für Ideen</h3>
+        <p>Du hast ein Hobby, das ab und an mal mehr Platz als ein Wohnzimmer braucht, willst eine Kindergeburtstagsparty feiern, Yoga mit Freunden genießen oder mal wieder ausgiebig nähen?</p>
+        <p style="margin-top:10px; font-size:.9rem; color:#777;">Dann bist du bei uns richtig – wir versuchen deine Idee Wirklichkeit werden zu lassen!</p>
+        <a href="#kontakt" class="card-btn">Idee einbringen →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAFÉ DETAIL -->
+<section id="cafe" style="background: var(--mint-dark); padding-top: 0; padding-bottom: 64px;">
+  <div class="section-inner">
+    <div class="cafe-detail">
+      <h3>🐉 Spielen, Lachen, Begegnen</h3>
+      <p>Willkommen im <strong>Herzstück des Drachennests</strong>: Unser 50 m² großer Begegnungsraum ist ein lebendiger Ort zum Austauschen, Wohlfühlen und Toben. Während die Kleinen nach Herzenslust mit unseren zahlreichen Spielsachen spielen, entspannen sich die Großen bei einer Tasse Kaffee oder Tee und einem Snack.</p>
+
+      <div class="highlight-box">💰 5 € Unkostenbeitrag pro Familie und Besuch</div>
+
+      <div class="cafe-cols">
+        <div>
+          <h4>Was dich erwartet:</h4>
+          <ul>
+            <li>Großer Spielbereich mit Spielküche, Bauecke &amp; vielem mehr</li>
+            <li>Kaffee, Tee &amp; Snack inklusive</li>
+            <li>Eigene Verpflegung darf gerne mitgebracht werden</li>
+            <li>Wickelmöglichkeiten &amp; Hochstühle</li>
+            <li>Familienfreundliches Ambiente</li>
+          </ul>
+        </div>
+        <div>
+          <h4>🎉 Besondere Tage mit Motto:</h4>
+          <ul>
+            <li>Kinderschminken</li>
+            <li>Vorlesestunden</li>
+            <li>Bastelaktionen</li>
+            <li>Mini-Konzerte oder Bewegungsangebote</li>
+          </ul>
+          <p style="margin-top:14px; font-size:.9rem; color:#555;">Komm vorbei und mach das Drachennest zu deinem neuen Lieblingsort für entspannte Familienzeit!</p>
+        </div>
+      </div>
+      <div class="cafe-photos">
+        <img src="fotos/cafe1.jpeg" alt="Familien Café DrachenNest">
+        <img src="fotos/cafe2.jpeg" alt="Spielbereich DrachenNest">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="section-inner">
+    <h2 class="section-title">Unsere nächsten Events</h2>
+    <div class="events-list">
+
+      <div class="event-item">
+        <div class="event-date">
+          <div class="day">02</div>
+          April
+        </div>
+        <div class="event-info">
+          <h4>🐉 Drachennest Eröffnung</h4>
+          <p>Gemeinsam die Räume erkunden - mit schminken, basteln und Waffeln. Bei schönem Wetter anschließend ein Osterfeuer im Garten</p>
+        </div>
+      </div>
+
+      <div class="event-item" style="border: 2px dashed var(--mint-dark);">
+        <div class="event-date" style="background: var(--mint-dark); color: #666;">
+          <div class="day">?</div>
+          bald
+        </div>
+        <div class="event-info">
+          <h4>✨ Weitere Events in Planung …</h4>
+          <p>Folgt uns oder meldet euch für Neuigkeiten an!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--mint-dark);">
+  <div class="section-inner">
+    <h2 class="section-title">Häufig gestellte Fragen</h2>
+    <div class="faq-list">
+
+      <details open>
+        <summary>Was darf ich bei euch machen?</summary>
+        <p>Bei uns darfst du alles machen, was andere nicht stört. Gerne auch deine eigene Brotzeit mitbringen. Das DrachenNest soll ein Ort sein, an dem du dich rundum wohlfühlst!</p>
+      </details>
+
+      <details>
+        <summary>Wie genau finde ich euch?</summary>
+        <p>Wir befinden uns in der <strong>Münchner Straße 3, 82256 Fürstenfeldbruck</strong>. Am besten mit dem Fahrrad, zu Fuß oder dem ÖPNV erreichbar. Es sind aber auch ein paar Parkplätze in der Nähe vorhanden.</p>
+      </details>
+
+      <details>
+        <summary>Wann habt ihr geöffnet?</summary>
+        <p>Unsere regulären Öffnungszeiten sind <strong>Dienstag und Donnerstag von 15:00 bis 18:00 Uhr</strong>. Für Sonderveranstaltungen oder Raummiete können auch andere Zeiten vereinbart werden.</p>
+      </details>
+
+      <details>
+        <summary>Was kostet was?</summary>
+        <p>Der Begegnungsraum ist für einen <strong>Unkostenbeitrag von 5 € pro Familie</strong> nutzbar – inklusive Kaffee, Tee und einem kleinen Snack. Secondhand-Ware ist auf Spendenbasis erhältlich. Für Raummiete und Kurse bitte direkt anfragen.</p>
+      </details>
+
+      <details>
+        <summary>Kann ich den Raum für meine Veranstaltung mieten?</summary>
+        <p>Ja! Das DrachenNest eignet sich hervorragend für Kindergeburtstage, Yogastunden, Bastelkurse, Vereinstreffen, Vorträge, Kino-Abende und vieles mehr. Komm vorbei oder ruf uns an – wir finden gemeinsam eine Lösung.</p>
+      </details>
+
+      <details>
+        <summary>Gibt es Secondhand-Ware zu kaufen?</summary>
+        <p>Ja, wir haben sortierte Secondhand-Waren aus verschiedenen Kategorien – immer auf Spendenbasis. Es ist auch möglich, eigene Artikel auf Kommission zu verkaufen. Einfach ansprechen!</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="section-inner">
+    <h2 class="section-title">Kontakt &amp; Anfahrt</h2>
+    <div class="kontakt-grid">
+
+      <div class="kontakt-card">
+        <div class="k-icon">📍</div>
+        <h4>Adresse</h4>
+        <p>Münchner Straße 3<br>82256 Fürstenfeldbruck</p>
+      </div>
+
+      <div class="kontakt-card">
+        <div class="k-icon">📞</div>
+        <h4>Telefon / WhatsApp</h4>
+        <a href="tel:+4917278860059">+49 172 788 60 59</a>
+        <p style="margin-top:6px; font-size:.85rem;">Auch via WhatsApp erreichbar</p>
+      </div>
+
+      <div class="kontakt-card">
+        <div class="k-icon">🕒</div>
+        <h4>Öffnungszeiten</h4>
+        <p>Di &amp; Do<br>15:00 – 18:00 Uhr</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:28px; font-size:.9rem; opacity:.7; text-align:center;">
+      Unterstützt von der <a href="https://hans-kiener-stiftung.de/">Hans Kiener Stiftung</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:10px;">© 2026 DrachenNest – Raum für Begegnung · Fürstenfeldbruck</p>
+  <a href="#">Impressum</a>
+  <a href="#">Datenschutzerklärung</a>
+</footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('bunting-canvas');
+  const ctx = canvas.getContext('2d');
+  const COLORS = ['#c0392b','#8b5ba6','#e8b84b','#5b9abf','#4a7c4a'];
+  const FLAG_W = 44, FLAG_H = 56, GAP = 6;
+  let W, H, nodes, dragging = null, simulating = false, stillTimer = null;
+  // physics nodes along the rope
+  function buildNodes() {
+    const count = Math.ceil(W / (FLAG_W + GAP)) ;
+    nodes = [];
+    for (let i = 0; i < count; i++) {
+      const x = (i / (count - 1)) * W;
+      nodes.push({ x, y: 14, ox: x, oy: 14, vx: 0, vy: 0, pinned: i === 0 || i === count - 1 });
+    }
+  }
+
+  function resize() {
+    W = canvas.parentElement.offsetWidth;  // ← war: canvas.offsetWidth
+    H = 90;
+    canvas.width  = W * devicePixelRatio;
+    canvas.height = H * devicePixelRatio;
+    canvas.style.width  = W + 'px';       // ← neu
+    canvas.style.height = H + 'px';
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    buildNodes();
+  }
+
+  function simulate() {
+    if (!simulating) return;
+
+    const REST = (FLAG_W + GAP);
+    const GRAVITY = 0.45, DAMPING = 0.985, STIFFNESS = 0.3;
+    let totalMovement = 0;
+
+    for (const n of nodes) {
+      if (n.pinned) continue;
+      n.vy += GRAVITY;
+      n.vy += (n.oy - n.y) * 0.018;
+      n.vx *= DAMPING; n.vy *= DAMPING;
+      n.x += n.vx;  n.y += n.vy;
+      totalMovement += Math.abs(n.vx) + Math.abs(n.vy);
+    }
+    for (let iter = 0; iter < 8; iter++) {
+      for (let i = 0; i < nodes.length - 1; i++) {
+        const a = nodes[i], b = nodes[i+1];
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 0.001;
+        const diff = (dist - REST) / dist * STIFFNESS;
+        if (!a.pinned) { a.x += dx * diff; a.y += dy * diff; }
+        if (!b.pinned) { b.x -= dx * diff; b.y -= dy * diff; }
+      }
+    }
+
+    // stop simulation once everything has settled
+    if (!dragging && totalMovement < 0.3) {
+      simulating = false;
+      // snap nodes back to rest position cleanly
+      for (const n of nodes) { if (!n.pinned) { n.x = n.ox; n.y = n.oy; n.vx = 0; n.vy = 0; } }
+      draw();
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // flags (triangles between consecutive nodes)
+    for (let i = 0; i < nodes.length - 1; i++) {
+      const a = nodes[i], b = nodes[i+1];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      // perpendicular direction (points downward)
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const len = Math.sqrt(dx*dx + dy*dy) || 1;
+      const px = -dy / len, py = dx / len;
+      const tipX = mx + px * FLAG_H, tipY = my + py * FLAG_H;
+
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.18)';
+      ctx.shadowBlur = 6; ctx.shadowOffsetX = 1; ctx.shadowOffsetY = 3;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.lineTo(tipX, tipY);
+      ctx.closePath();
+      ctx.fillStyle = COLORS[i % COLORS.length];
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // rope shadow
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y + 2);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y + 2);
+    ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+    ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // rope
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y);
+    ctx.strokeStyle = '#b8976a';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // rope highlight
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y - 0.5);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y - 0.5);
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // knot dots
+    ctx.fillStyle = '#8a6030';
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 3, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  function loop() { simulate(); draw(); requestAnimationFrame(loop); }
+
+  // --- interaction ---
+  function nearestNode(x, y, radius = 30) {
+    let best = null, bd = radius * radius;
+    for (const n of nodes) {
+      if (n.pinned) continue;
+      const d = (n.x-x)**2 + (n.y-y)**2;
+      if (d < bd) { bd = d; best = n; }
+    }
+    return best;
+  }
+
+  function pos(e) {
+    const r = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x: src.clientX - r.left, y: src.clientY - r.top };
+  }
+
+canvas.addEventListener('mousedown',  e => {
+  const p = pos(e);
+  dragging = nearestNode(p.x, p.y);
+  if (dragging) simulating = true;
+});
+canvas.addEventListener('mousemove',  e => {
+  if (!dragging) return;
+  const p = pos(e);
+  dragging.x = p.x; dragging.y = p.y;
+  dragging.vx = 0;  dragging.vy = 0;
+});
+canvas.addEventListener('mouseup', () => {
+  dragging = null;
+  // give a small nudge so spring-back runs
+  if (simulating) {
+    for (const n of nodes) if (!n.pinned) { n.vx += (Math.random()-.5)*0.5; }
+  }
+});
+canvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  const p = pos(e);
+  dragging = nearestNode(p.x, p.y);
+  if (dragging) simulating = true;
+}, {passive:false});
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  if (!dragging) return;
+  const p = pos(e);
+  dragging.x = p.x; dragging.y = p.y;
+  dragging.vx = 0;  dragging.vy = 0;
+}, {passive:false});
+canvas.addEventListener('touchend', () => {
+  dragging = null;
+  if (simulating) {
+    for (const n of nodes) if (!n.pinned) { n.vx += (Math.random()-.5)*0.5; }
+  }
+});
+
+  window.addEventListener('resize', resize);
+  resize();
+  loop();
+})();
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DrachenNest – Raum für Begegnung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mint: #d6edd6;
+      --mint-dark: #b8dbb8;
+      --green: #4a7c4a;
+      --green-dark: #2e5c2e;
+      --gold: #e8b84b;
+      --purple: #8b5ba6;
+      --blue: #5b9abf;
+      --red: #c0392b;
+      --text: #2a2a2a;
+      --white: #fff;
+    }
+ 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--mint);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+ 
+    /* ── BUNTING ── */
+    .bunting {
+      width: 100%;
+      background: var(--mint-dark);
+      padding: 0 0 0;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .bunting svg { width: 100%; height: 80px; display: block; }
+ 
+    /* ── NAV ── */
+    nav {
+      background: var(--mint-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    }
+    .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .nav-logo {
+      font-family: 'MedievalSharp', 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--green-dark);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-logo span { color: var(--purple); }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: .9rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--purple); }
+ 
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: .85rem;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      transform: rotate(-2deg);
+      box-shadow: 2px 3px 8px rgba(0,0,0,.2);
+    }
+    .hero h1 {
+      font-family: 'MedievalSharp', 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--green-dark);
+      letter-spacing: 2px;
+    }
+    .hero h1 .D { color: var(--purple); }
+    .hero h1 .N { color: var(--purple); }
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--green);
+      font-weight: 700;
+      margin: 16px auto 0;
+      max-width: 600px;
+      line-height: 1.4;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      margin: 16px auto 32px;
+      max-width: 540px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--green-dark);
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 3px 4px 12px rgba(0,0,0,.2);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 3px 6px 16px rgba(0,0,0,.25); }
+ 
+    /* dragon SVG placeholder */
+    .dragon-wrap {
+      margin: 32px auto 0;
+      max-width: 220px;
+      opacity: .15;
+      pointer-events: none;
+    }
+ 
+    /* ── ÖFFNUNGSZEITEN BANNER ── */
+    .hours-banner {
+      background: var(--blue);
+      color: #fff;
+      text-align: center;
+      padding: 20px 24px;
+    }
+    .hours-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+    .hours-banner p { font-size: 1.1rem; font-weight: 600; }
+ 
+    /* ── SECTION WRAPPER ── */
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+ 
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.13); }
+    .card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+    .card p { line-height: 1.7; color: #555; font-size: .95rem; }
+    .card ul { padding-left: 20px; color: #555; font-size: .95rem; line-height: 1.9; margin-top: 10px; }
+    .card-accent {
+      position: absolute;
+      top: 0; right: 0;
+      width: 6px;
+      height: 100%;
+      border-radius: 0 20px 20px 0;
+    }
+    .card:nth-child(1) .card-accent { background: var(--gold); }
+    .card:nth-child(2) .card-accent { background: var(--purple); }
+    .card:nth-child(3) .card-accent { background: var(--blue); }
+    .card-btn {
+      display: inline-block;
+      margin-top: 18px;
+      background: var(--green-dark);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .875rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .card-btn:hover { background: var(--green); }
+ 
+    /* ── CAFE DETAIL ── */
+    .cafe-detail {
+      background: #fff;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      margin-top: 36px;
+    }
+    .cafe-detail h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .cafe-detail p { line-height: 1.8; color: #555; margin-bottom: 16px; }
+    .cafe-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 600px) { .cafe-cols { grid-template-columns: 1fr; } }
+    .cafe-detail h4 {
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .cafe-detail ul { padding-left: 20px; color: #555; line-height: 2; }
+    .highlight-box {
+      background: var(--mint);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--green-dark);
+      margin: 16px 0;
+    }
+ 
+    /* ── EVENTS ── */
+    #events { background: var(--mint-dark); }
+    .events-list { margin-top: 32px; display: grid; gap: 16px; }
+    .event-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    }
+    .event-date {
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 12px;
+      padding: 10px 16px;
+      text-align: center;
+      min-width: 70px;
+      font-weight: 800;
+      font-size: .85rem;
+      line-height: 1.3;
+    }
+    .event-date .day { font-size: 1.6rem; line-height: 1; }
+    .event-info h4 { font-weight: 800; font-size: 1rem; color: var(--text); }
+    .event-info p { font-size: .9rem; color: #666; margin-top: 4px; }
+ 
+    /* ── FAQ ── */
+    .faq-list { margin-top: 32px; display: grid; gap: 12px; }
+    details {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+      cursor: pointer;
+    }
+    details[open] { background: var(--mint); }
+    summary {
+      font-weight: 800;
+      font-size: 1rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    summary::after {
+      content: '▸';
+      font-size: 1.1rem;
+      color: var(--green);
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    details[open] summary::after { transform: rotate(90deg); }
+    details p { margin-top: 14px; line-height: 1.8; color: #555; font-size: .95rem; }
+ 
+    /* ── KONTAKT ── */
+    #kontakt { background: var(--green-dark); color: #fff; }
+    #kontakt .section-title { color: #fff; }
+    #kontakt .section-title::after { background: var(--gold); }
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .kontakt-card {
+      background: rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+    .kontakt-card .k-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .kontakt-card h4 { font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+    .kontakt-card a { color: var(--gold); text-decoration: none; font-weight: 700; }
+    .kontakt-card p { font-size: .9rem; opacity: .85; line-height: 1.6; }
+ 
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 24px;
+      font-size: .85rem;
+    }
+    footer a { color: rgba(255,255,255,.6); margin: 0 10px; text-decoration: none; }
+    footer a:hover { color: #fff; }
+ 
+    /* ── CHIP LABELS ── */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 0;
+    }
+    .chip {
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .85rem;
+      color: #fff;
+    }
+    .chip-cafe    { background: var(--gold); color: #333; }
+    .chip-second  { background: var(--purple); }
+    .chip-event   { background: var(--blue); }
+    .chip-kurs    { background: var(--green); }
+    .chip-gebu    { background: var(--red); }
+ 
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: var(--mint-dark); border-radius: 3px; }
+
+    .cafe-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .cafe-photos img {
+    width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 14px;
