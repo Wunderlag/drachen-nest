@@ -815,6 +815,36 @@ canvas.addEventListener('touchend', () => {
     for (const n of nodes) if (!n.pinned) { n.vx += (Math.random()-.5)*0.5; }
   }
 });
+// ── GYRO / DEVICE MOTION ──
+function requestMotionPermission() {
+  if (typeof DeviceMotionEvent !== 'undefined' &&
+      typeof DeviceMotionEvent.requestPermission === 'function') {
+    // iOS 13+ braucht explizite Erlaubnis
+    DeviceMotionEvent.requestPermission().catch(() => {});
+  }
+}
+
+window.addEventListener('devicemotion', e => {
+  const acc = e.accelerationIncludingGravity;
+  if (!acc) return;
+
+  const shakeX = (acc.x || 0) * 0.18;
+  const shakeY = Math.abs(acc.y || 0) * 0.12;
+
+  // nur reagieren wenn Bewegung spürbar
+  if (Math.abs(shakeX) < 0.4 && shakeY < 0.4) return;
+
+  simulating = true;
+  for (const n of nodes) {
+    if (n.pinned) continue;
+    n.vx += shakeX * (0.5 + Math.random() * 0.5);
+    n.vy += shakeY * (0.5 + Math.random() * 0.5);
+  }
+}, { passive: true });
+
+// iOS: Erlaubnis beim ersten Touch auf die Seite anfragen
+document.addEventListener('touchstart', requestMotionPermission, { once: true });
+
 
   window.addEventListener('resize', resize);
   resize();
