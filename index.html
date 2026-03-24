@@ -382,81 +382,45 @@
     /* scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-thumb { background: var(--mint-dark); border-radius: 3px; }
+
+    .cafe-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .cafe-photos img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+  @media (max-width: 520px) {
+    .cafe-photos { grid-template-columns: 1fr; }
+  }
   </style>
 </head>
 <body>
 
  <!-- BUNTING -->
-<div class="bunting">
-  <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="rope-shadow" x="-5%" y="-20%" width="110%" height="200%">
-        <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="rgba(0,0,0,0.25)"/>
-      </filter>
-      <filter id="flag-shadow">
-        <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.18)"/>
-      </filter>
-    </defs>
- 
-    <!-- flags (no text) -->
-    <g filter="url(#flag-shadow)">
-      <polygon points="30,6  72,62  114,6"  fill="#c0392b"/>
-      <polygon points="124,6 166,62 208,6"  fill="#8b5ba6"/>
-      <polygon points="218,6 260,62 302,6"  fill="#e8b84b"/>
-      <polygon points="312,6 354,62 396,6"  fill="#5b9abf"/>
-      <polygon points="406,6 448,62 490,6"  fill="#4a7c4a"/>
-      <polygon points="500,6 542,62 584,6"  fill="#c0392b"/>
-      <polygon points="594,6 636,62 678,6"  fill="#8b5ba6"/>
-      <polygon points="688,6 730,62 772,6"  fill="#e8b84b"/>
-      <polygon points="782,6 824,62 866,6"  fill="#5b9abf"/>
-      <polygon points="876,6 918,62 960,6"  fill="#4a7c4a"/>
-      <polygon points="970,6 1012,62 1054,6" fill="#c0392b"/>
-      <polygon points="1064,6 1106,62 1148,6" fill="#8b5ba6"/>
-    </g>
- 
-    <!-- rope shadow (slightly offset, blurred) -->
-    <path d="M0,7 C60,7 90,18 120,7 C150,7 180,18 210,7 C240,7 270,18 300,7 C330,7 360,18 390,7 C420,7 450,18 480,7 C510,7 540,18 570,7 C600,7 630,18 660,7 C690,7 720,18 750,7 C780,7 810,18 840,7 C870,7 900,18 930,7 C960,7 990,18 1020,7 C1050,7 1080,18 1110,7 C1140,7 1170,18 1200,7"
-          stroke="rgba(0,0,0,0.18)" stroke-width="3" fill="none" stroke-linecap="round"/>
- 
-    <!-- rope (main, twine colour) -->
-    <path d="M0,7 C60,7 90,18 120,7 C150,7 180,18 210,7 C240,7 270,18 300,7 C330,7 360,18 390,7 C420,7 450,18 480,7 C510,7 540,18 570,7 C600,7 630,18 660,7 C690,7 720,18 750,7 C780,7 810,18 840,7 C870,7 900,18 930,7 C960,7 990,18 1020,7 C1050,7 1080,18 1110,7 C1140,7 1170,18 1200,7"
-          stroke="#b8976a" stroke-width="2.2" fill="none" stroke-linecap="round"
-          filter="url(#rope-shadow)"/>
-    <!-- rope highlight -->
-    <path d="M0,6.5 C60,6.5 90,17.5 120,6.5 C150,6.5 180,17.5 210,6.5 C240,6.5 270,17.5 300,6.5 C330,6.5 360,17.5 390,6.5 C420,6.5 450,17.5 480,6.5 C510,6.5 540,17.5 570,6.5 C600,6.5 630,17.5 660,6.5 C690,6.5 720,17.5 750,6.5 C780,6.5 810,17.5 840,6.5 C870,6.5 900,17.5 930,6.5 C960,6.5 990,17.5 1020,6.5 C1050,6.5 1080,17.5 1110,6.5 C1140,6.5 1170,17.5 1200,6.5"
-          stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" stroke-linecap="round"/>
- 
-    <!-- little knot dots at flag tops -->
-    <g fill="#8a6030">
-      <circle cx="72"   cy="6"  r="3"/>
-      <circle cx="166"  cy="6"  r="3"/>
-      <circle cx="260"  cy="6"  r="3"/>
-      <circle cx="354"  cy="6"  r="3"/>
-      <circle cx="448"  cy="6"  r="3"/>
-      <circle cx="542"  cy="6"  r="3"/>
-      <circle cx="636"  cy="6"  r="3"/>
-      <circle cx="730"  cy="6"  r="3"/>
-      <circle cx="824"  cy="6"  r="3"/>
-      <circle cx="918"  cy="6"  r="3"/>
-      <circle cx="1012" cy="6"  r="3"/>
-      <circle cx="1106" cy="6"  r="3"/>
-    </g>
-  </svg>
-</div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo"><span>D</span>rachen<span>N</span>est</a>
-    <ul class="nav-links">
-      <li><a href="#angebote">Angebote</a></li>
-      <li><a href="#cafe">Begegnungsraum</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
+  <div class="bunting">
+    <canvas id="bunting-canvas"></canvas>
   </div>
-</nav>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo"><span>D</span>rachen<span>N</span>est</a>
+      <ul class="nav-links">
+        <li><a href="#angebote">Angebote</a></li>
+        <li><a href="#cafe">Begegnungsraum</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -548,6 +512,10 @@
           </ul>
           <p style="margin-top:14px; font-size:.9rem; color:#555;">Komm vorbei und mach das Drachennest zu deinem neuen Lieblingsort für entspannte Familienzeit!</p>
         </div>
+      </div>
+      <div class="cafe-photos">
+        <img src="fotos/cafe1.jpg" alt="Familien Café DrachenNest">
+        <img src="fotos/cafe2.jpg" alt="Spielbereich DrachenNest">
       </div>
     </div>
   </div>
@@ -664,6 +632,191 @@
   <a href="#">Impressum</a>
   <a href="#">Datenschutzerklärung</a>
 </footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('bunting-canvas');
+  const ctx = canvas.getContext('2d');
+  const COLORS = ['#c0392b','#8b5ba6','#e8b84b','#5b9abf','#4a7c4a'];
+  const FLAG_W = 44, FLAG_H = 56, GAP = 6;
+  let W, H, nodes, dragging = null, simulating = false, stillTimer = null;
+  // physics nodes along the rope
+  function buildNodes() {
+    const count = Math.ceil(W / (FLAG_W + GAP)) -2;
+    nodes = [];
+    for (let i = 0; i < count; i++) {
+      const x = (i / (count - 1)) * W;
+      nodes.push({ x, y: 14, ox: x, oy: 14, vx: 0, vy: 0, pinned: i === 0 || i === count - 1 });
+    }
+  }
+
+  function resize() {
+    W = canvas.parentElement.offsetWidth;  // ← war: canvas.offsetWidth
+    H = 90;
+    canvas.width  = W * devicePixelRatio;
+    canvas.height = H * devicePixelRatio;
+    canvas.style.width  = W + 'px';       // ← neu
+    canvas.style.height = H + 'px';
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    buildNodes();
+  }
+
+  function simulate() {
+    if (!simulating) return;
+
+    const REST = (FLAG_W + GAP);
+    const GRAVITY = 0.45, DAMPING = 0.985, STIFFNESS = 0.3;
+    let totalMovement = 0;
+
+    for (const n of nodes) {
+      if (n.pinned) continue;
+      n.vy += GRAVITY;
+      n.vy += (n.oy - n.y) * 0.018;
+      n.vx *= DAMPING; n.vy *= DAMPING;
+      n.x += n.vx;  n.y += n.vy;
+      totalMovement += Math.abs(n.vx) + Math.abs(n.vy);
+    }
+    for (let iter = 0; iter < 8; iter++) {
+      for (let i = 0; i < nodes.length - 1; i++) {
+        const a = nodes[i], b = nodes[i+1];
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 0.001;
+        const diff = (dist - REST) / dist * STIFFNESS;
+        if (!a.pinned) { a.x += dx * diff; a.y += dy * diff; }
+        if (!b.pinned) { b.x -= dx * diff; b.y -= dy * diff; }
+      }
+    }
+
+    // stop simulation once everything has settled
+    if (!dragging && totalMovement < 0.3) {
+      simulating = false;
+      // snap nodes back to rest position cleanly
+      for (const n of nodes) { if (!n.pinned) { n.x = n.ox; n.y = n.oy; n.vx = 0; n.vy = 0; } }
+      draw();
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // flags (triangles between consecutive nodes)
+    for (let i = 0; i < nodes.length - 1; i++) {
+      const a = nodes[i], b = nodes[i+1];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      // perpendicular direction (points downward)
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const len = Math.sqrt(dx*dx + dy*dy) || 1;
+      const px = -dy / len, py = dx / len;
+      const tipX = mx + px * FLAG_H, tipY = my + py * FLAG_H;
+
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.18)';
+      ctx.shadowBlur = 6; ctx.shadowOffsetX = 1; ctx.shadowOffsetY = 3;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.lineTo(tipX, tipY);
+      ctx.closePath();
+      ctx.fillStyle = COLORS[i % COLORS.length];
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // rope shadow
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y + 2);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y + 2);
+    ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+    ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // rope
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y);
+    ctx.strokeStyle = '#b8976a';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // rope highlight
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y - 0.5);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y - 0.5);
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // knot dots
+    ctx.fillStyle = '#8a6030';
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 3, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  function loop() { simulate(); draw(); requestAnimationFrame(loop); }
+
+  // --- interaction ---
+  function nearestNode(x, y, radius = 30) {
+    let best = null, bd = radius * radius;
+    for (const n of nodes) {
+      if (n.pinned) continue;
+      const d = (n.x-x)**2 + (n.y-y)**2;
+      if (d < bd) { bd = d; best = n; }
+    }
+    return best;
+  }
+
+  function pos(e) {
+    const r = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x: src.clientX - r.left, y: src.clientY - r.top };
+  }
+
+canvas.addEventListener('mousedown',  e => {
+  const p = pos(e);
+  dragging = nearestNode(p.x, p.y);
+  if (dragging) simulating = true;
+});
+canvas.addEventListener('mousemove',  e => {
+  if (!dragging) return;
+  const p = pos(e);
+  dragging.x = p.x; dragging.y = p.y;
+  dragging.vx = 0;  dragging.vy = 0;
+});
+canvas.addEventListener('mouseup', () => {
+  dragging = null;
+  // give a small nudge so spring-back runs
+  if (simulating) {
+    for (const n of nodes) if (!n.pinned) { n.vx += (Math.random()-.5)*0.5; }
+  }
+});
+canvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  const p = pos(e);
+  dragging = nearestNode(p.x, p.y);
+  if (dragging) simulating = true;
+}, {passive:false});
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  if (!dragging) return;
+  const p = pos(e);
+  dragging.x = p.x; dragging.y = p.y;
+  dragging.vx = 0;  dragging.vy = 0;
+}, {passive:false});
+canvas.addEventListener('touchend', () => {
+  dragging = null;
+  if (simulating) {
+    for (const n of nodes) if (!n.pinned) { n.vx += (Math.random()-.5)*0.5; }
+  }
+});
+
+  window.addEventListener('resize', resize);
+  resize();
+  loop();
+})();
+</script>
 
 </body>
 </html>
