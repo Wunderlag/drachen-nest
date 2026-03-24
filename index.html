@@ -388,15 +388,8 @@
 
 <!-- BUNTING -->
 <div class="bunting">
-  <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="rope-shadow" x="-5%" y="-20%" width="110%" height="200%">
-        <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="rgba(0,0,0,0.25)"/>
-      </filter>
-      <filter id="flag-shadow">
-        <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.18)"/>
-      </filter>
-    </defs>
+  <canvas id="bunting-canvas"></canvas>
+</div>
 
     <!-- flags (no text) -->
     <g filter="url(#flag-shadow)">
@@ -675,6 +668,149 @@
   <a href="#">Impressum</a>
   <a href="#">Datenschutzerklärung</a>
 </footer>
+<script>
+(function() {
+  const canvas = document.getElementById('bunting-canvas');
+  const ctx = canvas.getContext('2d');
+  const COLORS = ['#c0392b','#8b5ba6','#e8b84b','#5b9abf','#4a7c4a'];
+  const FLAG_W = 44, FLAG_H = 56, GAP = 6;
+  let W, H, nodes, dragging = null, mouse = {x:0,y:0};
+
+  // physics nodes along the rope
+  function buildNodes() {
+    const count = Math.ceil(W / (FLAG_W + GAP)) + 2;
+    nodes = [];
+    for (let i = 0; i < count; i++) {
+      const x = (i / (count - 1)) * W;
+      nodes.push({ x, y: 14, ox: x, oy: 14, vx: 0, vy: 0, pinned: i === 0 || i === count - 1 });
+    }
+  }
+
+  function resize() {
+    W = canvas.offsetWidth;
+    H = 90;
+    canvas.width  = W * devicePixelRatio;
+    canvas.height = H * devicePixelRatio;
+    canvas.style.height = H + 'px';
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    buildNodes();
+  }
+
+  function simulate() {
+    const REST = (FLAG_W + GAP);
+    const GRAVITY = 0.45, DAMPING = 0.985, STIFFNESS = 0.3;
+
+    for (const n of nodes) {
+      if (n.pinned) continue;
+      n.vy += GRAVITY;
+      // spring back to rest y
+      n.vy += (n.oy - n.y) * 0.018;
+      n.vx *= DAMPING; n.vy *= DAMPING;
+      n.x += n.vx;  n.y += n.vy;
+    }
+    // distance constraints
+    for (let iter = 0; iter < 8; iter++) {
+      for (let i = 0; i < nodes.length - 1; i++) {
+        const a = nodes[i], b = nodes[i+1];
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 0.001;
+        const diff = (dist - REST) / dist * STIFFNESS;
+        if (!a.pinned) { a.x += dx * diff; a.y += dy * diff; }
+        if (!b.pinned) { b.x -= dx * diff; b.y -= dy * diff; }
+      }
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // flags (triangles between consecutive nodes)
+    for (let i = 0; i < nodes.length - 1; i++) {
+      const a = nodes[i], b = nodes[i+1];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      // perpendicular direction (points downward)
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const len = Math.sqrt(dx*dx + dy*dy) || 1;
+      const px = -dy / len, py = dx / len;
+      const tipX = mx + px * FLAG_H, tipY = my + py * FLAG_H;
+
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.18)';
+      ctx.shadowBlur = 6; ctx.shadowOffsetX = 1; ctx.shadowOffsetY = 3;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.lineTo(tipX, tipY);
+      ctx.closePath();
+      ctx.fillStyle = COLORS[i % COLORS.length];
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // rope shadow
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y + 2);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y + 2);
+    ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+    ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // rope
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y);
+    ctx.strokeStyle = '#b8976a';
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // rope highlight
+    ctx.beginPath();
+    ctx.moveTo(nodes[0].x, nodes[0].y - 0.5);
+    for (let i = 1; i < nodes.length; i++) ctx.lineTo(nodes[i].x, nodes[i].y - 0.5);
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // knot dots
+    ctx.fillStyle = '#8a6030';
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 3, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  function loop() { simulate(); draw(); requestAnimationFrame(loop); }
+
+  // --- interaction ---
+  function nearestNode(x, y, radius = 30) {
+    let best = null, bd = radius * radius;
+    for (const n of nodes) {
+      if (n.pinned) continue;
+      const d = (n.x-x)**2 + (n.y-y)**2;
+      if (d < bd) { bd = d; best = n; }
+    }
+    return best;
+  }
+
+  function pos(e) {
+    const r = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x: src.clientX - r.left, y: src.clientY - r.top };
+  }
+
+  canvas.addEventListener('mousedown',  e => { dragging = nearestNode(...Object.values(pos(e))); });
+  canvas.addEventListener('mousemove',  e => { if (dragging) { const p = pos(e); dragging.x = p.x; dragging.y = p.y; dragging.vx = 0; dragging.vy = 0; } });
+  canvas.addEventListener('mouseup',    ()=> { dragging = null; });
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); dragging = nearestNode(...Object.values(pos(e))); }, {passive:false});
+  canvas.addEventListener('touchmove',  e => { e.preventDefault(); if (dragging) { const p = pos(e); dragging.x = p.x; dragging.y = p.y; dragging.vx = 0; dragging.vy = 0; } }, {passive:false});
+  canvas.addEventListener('touchend',   ()=> { dragging = null; });
+
+  window.addEventListener('resize', resize);
+  resize();
+  loop();
+})();
+</script>
 
 </body>
 </html>
