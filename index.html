@@ -815,7 +815,12 @@ canvas.addEventListener('touchend', () => {
     for (const n of nodes) if (!n.pinned) { n.vx += (Math.random()-.5)*0.5; }
   }
 });
-// ── GYRO / DEVICE MOTION ──
+
+  window.addEventListener('resize', resize);
+  resize();
+  loop();
+  
+  // ── GYRO / DEVICE MOTION ──
 function requestMotionPermission() {
   if (typeof DeviceMotionEvent !== 'undefined' &&
       typeof DeviceMotionEvent.requestPermission === 'function') {
@@ -846,9 +851,7 @@ window.addEventListener('devicemotion', e => {
 document.addEventListener('touchstart', requestMotionPermission, { once: true });
 
 
-  window.addEventListener('resize', resize);
-  resize();
-  loop();
+  
 })();
 </script>
 
