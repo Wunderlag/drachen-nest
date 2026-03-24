@@ -642,7 +642,7 @@
   let W, H, nodes, dragging = null, simulating = false, stillTimer = null;
   // physics nodes along the rope
   function buildNodes() {
-    const count = Math.ceil(W / (FLAG_W + GAP)) -2;
+    const count = Math.ceil(W / (FLAG_W + GAP));
     nodes = [];
     for (let i = 0; i < count; i++) {
       const x = (i / (count - 1)) * W;
