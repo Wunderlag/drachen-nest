@@ -864,7 +864,8 @@ window.addEventListener('devicemotion', e => {
 // iOS: Erlaubnis beim ersten Touch auf die Seite anfragen
 document.addEventListener('touchstart', requestMotionPermission, { once: true });
 })();
-  
+</script>
+
 <!-- Karten-Modal -->
 <div id="karte-modal"
      style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75);
@@ -879,5 +880,7 @@ document.addEventListener('touchstart', requestMotionPermission, { once: true })
   thumb.addEventListener('click', () => { modal.style.display = 'flex'; });
   modal.addEventListener('click', () => { modal.style.display = 'none'; });
 </script>
+</body>
+</html>
 </body>
 </html>
