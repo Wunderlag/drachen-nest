@@ -661,7 +661,7 @@
   const canvas = document.getElementById('bunting-canvas');
   const ctx = canvas.getContext('2d');
   const COLORS = ['#c0392b','#8b5ba6','#e8b84b','#5b9abf','#4a7c4a'];
-  const FLAG_W = 44, FLAG_H = 80, GAP = 6;
+  const FLAG_W = 44, FLAG_H = 50, GAP = 6;
   let W, H, nodes, dragging = null, simulating = true, stillTimer = null;
   // physics nodes along the rope
   function buildNodes() {
@@ -675,7 +675,7 @@
 
   function resize() {
     W = canvas.parentElement.offsetWidth;  // ← war: canvas.offsetWidth
-    H = 100;
+    H = 110;
     canvas.width  = W * devicePixelRatio;
     canvas.height = H * devicePixelRatio;
     canvas.style.width  = W + 'px';       // ← neu
@@ -688,7 +688,7 @@
     if (!simulating) return;
 
     const REST = (FLAG_W + GAP);
-    const GRAVITY = 0.45, DAMPING = 0.985, STIFFNESS = 0.3;
+    const GRAVITY = 0.45, DAMPING = 0.95, STIFFNESS = 0.3;
     let totalMovement = 0;
 
     for (const n of nodes) {
