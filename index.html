@@ -418,6 +418,16 @@
   @media (max-width: 520px) {
     .cafe-photos { grid-template-columns: 1fr; }
   }
+  @media (max-width: 600px) {
+  .urlaubs-banner {
+    top: 44px !important;
+    left: -90px !important;
+    width: 360px !important;
+    font-size: .9rem !important;
+    padding: 10px 0 !important;
+    transform: rotate(-35deg) !important;
+  }
+}
 
   html {
   scroll-padding-top: 60px; /* Höhe deiner Navbar – ggf. anpassen */
@@ -448,21 +458,21 @@
 <!-- HERO -->
 <section class="hero" id="home">
 <!-- URLAUBS-BANNER – zum Deaktivieren einfach diesen Block auskommentieren -->
-<div style="
+<div class="urlaubs-banner" style="
   position: absolute;
-  top: 52px;
-  left: -60px;
-  width: 400px;
+  top: 72px;
+  left: -80px;
+  width: 520px;
   background: var(--red);
   color: #fff;
   text-align: center;
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
-  font-size: .82rem;
-  line-height: 1.4;
-  padding: 10px 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  padding: 14px 0;
   transform: rotate(-35deg);
-  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  box-shadow: 0 4px 18px rgba(0,0,0,.3);
   z-index: 10;
   pointer-events: none;
   letter-spacing: .5px;
