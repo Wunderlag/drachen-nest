@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Mittsommer Shopping
+DESCRIPTION:Die Flohmarkthalle der Kiener Stiftung und das Drachennest laden zum Stöbern und Shoppen am längsten Tag des Jahres ein.
+DTSTART:20260621T160000
+DTEND:20260621T210000
+END:VEVENT
+END:VCALENDAR
