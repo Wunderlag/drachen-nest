@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Sonntags-Flohmarkt
+DESCRIPTION:Die Kiener Stiftung und das Drachennest laden von 09:00 bis 12:00 Uhr zum entspannten Stöbern und Shoppen in der kühlen Flohmarkt-Garage ein.
+DTSTART:20260719T090000
+DTEND:20260719T120000
+END:VEVENT
+END:VCALENDAR
