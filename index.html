@@ -432,6 +432,42 @@
   html {
   scroll-padding-top: 60px; /* Höhe deiner Navbar – ggf. anpassen */
   }
+
+.nav-sparkle {
+  position: relative;
+  font-weight: 900 !important;
+  color: transparent !important;
+  background: linear-gradient(90deg, var(--gold) 0%, #fff8dc 20%, var(--gold) 40%, #fff8dc 60%, var(--gold) 80%, #fff8dc 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: nav-shimmer 2.5s linear infinite;
+  padding: 2px 6px;
+  text-shadow: 0 0 14px rgba(232,184,75,.55);
+}
+
+.nav-sparkle::before,
+.nav-sparkle::after {
+  content: '✨';
+  position: absolute;
+  font-size: .7rem;
+  -webkit-text-fill-color: initial;
+  animation: nav-twinkle 1.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.nav-sparkle::before { top: -10px; left: -10px; }
+.nav-sparkle::after  { bottom: -10px; right: -10px; animation-delay: .8s; }
+
+@keyframes nav-shimmer {
+  to { background-position: -250% center; }
+}
+
+@keyframes nav-twinkle {
+  0%, 100% { opacity: 0; transform: scale(.4) rotate(0deg); }
+  50%      { opacity: 1; transform: scale(1.3) rotate(20deg); }
+}
+
+    
   </style>
 </head>
 <body>
@@ -448,7 +484,7 @@
       <ul class="nav-links">
         <li><a href="#angebote">Angebote</a></li>
         <li><a href="#cafe">Begegnungsraum</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="#events" class="nav-sparkle">Events</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
