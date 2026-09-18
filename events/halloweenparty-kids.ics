@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Halloweenparty für Kids
+DESCRIPTION:Kostüme, Spiele und Süßes bei unserer Halloweenparty für Kinder. Uhrzeit folgt.
+DTSTART:20261030T160000
+DTEND:20261030T180000
+END:VEVENT
+END:VCALENDAR
