@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Flohmarkt
+DESCRIPTION:Die Kiener Stiftung und das Drachennest laden zum entspannten Stöbern und Shoppen in der Flohmarkt-Garage ein.
+DTSTART:20261025T100000
+DTEND:20261025T160000
+END:VEVENT
+END:VCALENDAR
