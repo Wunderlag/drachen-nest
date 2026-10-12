@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Adventsbasteln für Erwachsene
+DESCRIPTION:Am Donnerstag von 19:00 bis 21:00 Uhr laden wir zu einem gemütlichen Adventsbasteln für Erwachsene ein - mit gemeinsamem Gestalten\, nettem Austausch und einer stimmungsvollen vorweihnachtlichen Atmosphäre.
+DTSTART:20261126T190000
+DTEND:20261126T210000
+END:VEVENT
+END:VCALENDAR
