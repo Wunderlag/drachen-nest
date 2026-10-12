@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Adventsbasteln (mit Kindern)
+DESCRIPTION:Am Sonntag von 09:00 bis 12:00 Uhr laden wir zu einem gemütlichen Adventsbasteln ein - Kreativität\, Austausch und ein bisschen Weihnachtszauber inklusive. Nehmt gerne eure Kinder mit\, die dürfen nebenan spielen.
+DTSTART:20261122T090000
+DTEND:20261122T120000
+END:VEVENT
+END:VCALENDAR
